@@ -1,29 +1,4 @@
 # Calculator-using-python-
-import tkinter
-from tkinter import *
-
-mainWindow = tkinter.Tk()
-mainWindow.title("Example Tkinter")
-
-headingLabel = tkinter.Label(mainWindow, text="Hello World")
-headingLabel.pack()
-
-userEntry = Entry(mainWindow)
-userEntry.pack()
-
-def fun():
-    # print("Hello")
-    name = userEntry.get()
-    print("Hello your name is: ", name)
-
-showButton = tkinter.Button(mainWindow, text="Button", command=fun())
-showButton.pack()
-
-mainWindow.mainloop()
-
-
-## Simple Calculator
-
 
 import tkinter as tk
 from tkinter import messagebox
@@ -69,7 +44,6 @@ def multiply():
 
 def divide():
     first, second = takeValueInput()
-
     if second == 0:
         messagebox.showerror("Error", "Cannot divide the value by 0.")
     else:
@@ -82,13 +56,11 @@ def divide():
 def takeValueInput():
     first = first_number_entry.get()
     second = second_number_entry.get()
-
-    try:
+     try:
         first = int(first)
         second = int(second)
-
         return first, second
-    except ValueError:
+     except ValueError:
         if ((len(first_number_entry.get()) == 0) or (len(second_number_entry.get()) == 0)):
             messagebox.showerror("Error", "Please enter a value")
         else:
